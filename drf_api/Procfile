@@ -1,2 +1,3 @@
 release: python manage.py makemigrations && python manage.py migrate
- web: gunicorn drf_api.wsgi --log-file -
+ web: gunicorn productivity_app.wsgi --log-file -
+ 
