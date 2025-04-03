@@ -53,7 +53,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'cloudinary_storage',
     'cloudinary',
-    'productivity_app'
+    'productivity_app',
     'dj_rest_auth.registration',
     'corsheaders',
 ]
@@ -79,9 +79,9 @@ CORS_ALLOWED_ORIGINS = [
  ]
 CORS_ALLOW_CREDENTIALS = True
 
- JWT_AUTH_COOKIE = 'my-app-auth'
- JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
- JWT_AUTH_SAMESITE = 'None'
+JWT_AUTH_COOKIE = 'my-app-auth'
+JWT_AUTH_REFRESH_COOKIE = 'my-refresh-token'
+JWT_AUTH_SAMESITE = 'None'
 
 ROOT_URLCONF = 'drf_api.urls'
 
