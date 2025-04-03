@@ -16,6 +16,7 @@ import dj_database_url
 import django_heroku
 django_heroku.settings(locals())
 
+
 if os.path.exists('env.py'):
     import env
 CLOUDINARY_STORAGE = {
@@ -159,6 +160,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
