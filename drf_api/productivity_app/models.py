@@ -2,6 +2,20 @@
 from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
 
+
+class MyModel(models.Model):
+    """
+    This is a sample model that represents a basic entity in your application.
+    You can customize the fields and add more models as per your requirements.
+    """
+    name = models.CharField(max_length=100)
+    description = models.TextField()
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
 class User(AbstractUser):
     # Your additional fields would go here
     
@@ -42,3 +56,9 @@ class Attachment(models.Model):
     file = models.FileField(upload_to='attachments/')
     created_at = models.DateTimeField(auto_now_add=True)
 
+class Settings(models.Model):
+    """Model for user settings."""
+    user = models.OneToOneField(User, on_delete=models.CASCADE, related_name='settings')
+    color_theme = models.CharField(max_length=50, default='light')
+    calendar_start_day = models.IntegerField(default=0)  # 0 for Sunday, 1 for Monday, etc.
+    notification_settings = models.JSONField(default=dict)
