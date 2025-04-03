@@ -3,18 +3,18 @@ from django.contrib.auth.models import AbstractUser, Group, Permission
 from django.db import models
 
 
-class MyModel(models.Model):
-    """
-    This is a sample model that represents a basic entity in your application.
-    You can customize the fields and add more models as per your requirements.
-    """
-    name = models.CharField(max_length=100)
-    description = models.TextField()
-    created_at = models.DateTimeField(auto_now_add=True)
-    updated_at = models.DateTimeField(auto_now=True)
+# class MyModel(models.Model):
+#     """
+#     This is a sample model that represents a basic entity in your application.
+#     You can customize the fields and add more models as per your requirements.
+#     """
+#     name = models.CharField(max_length=100)
+#     description = models.TextField()
+#     created_at = models.DateTimeField(auto_now_add=True)
+#     updated_at = models.DateTimeField(auto_now=True)
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 class User(AbstractUser):
     # Your additional fields would go here

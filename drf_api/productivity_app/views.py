@@ -4,7 +4,6 @@ from django.contrib.auth.decorators import login_required
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Task, Attachment
 from .forms import TaskForm, UserProfileForm, SettingsForm
-from .models import MyModel
 
 
 # class MyModel(models.Model):
