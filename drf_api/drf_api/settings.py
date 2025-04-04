@@ -12,10 +12,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import dj_database_url
-import django_heroku
-django_heroku.settings(locals())
-
+# import dj_database_url
+# import django_heroku
 
 
 
@@ -42,9 +40,10 @@ BASE_DIR = os.environ.get('BASE_DIR', Path(__file__).resolve().parent.parent)
 SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG', 'true') == 'true'
+DEBUG = 'DEV' in os.environ
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.herokuapp.com/']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1',
+                 'https://dashboard.heroku.com/apps/pp5-productivity-app-b/settings/']
 
 
 # Application definition
@@ -59,6 +58,7 @@ INSTALLED_APPS = [
     'productivity_app',
     'cloudinary',  
     'cloudinary_storage',
+    'dj_rest_auth.registration',
     'corsheaders',
     'rest_framework',
 ]
