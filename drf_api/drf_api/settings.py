@@ -12,9 +12,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-# import dj_database_url
+import dj_database_url
 import django_heroku
-# django_heroku.settings(locals())
+django_heroku.settings(locals())
+
+
 
 
 if os.path.exists('env.py'):
@@ -37,7 +39,7 @@ BASE_DIR = os.environ.get('BASE_DIR', Path(__file__).resolve().parent.parent)
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY', 'django-insecure-rnooh+v6$6@$wfv$-y7vb ^ lwp  # *(@%a*t51#q%7ixx5413bckh')
+SECRET_KEY = os.getenv('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'true') == 'true'
